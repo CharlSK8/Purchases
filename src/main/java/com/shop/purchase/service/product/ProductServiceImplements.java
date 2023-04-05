@@ -16,8 +16,8 @@ public class ProductServiceImplements implements ProductService{
 	ProductRepository productRepository;
 
 	@Override
-	public List<Product> findAll() {
-		return productRepository.findAll();
+	public Optional<List<Product>> findAll() {
+		return Optional.ofNullable(productRepository.findAll());
 	}
 
 	@Override

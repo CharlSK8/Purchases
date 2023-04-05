@@ -11,7 +11,7 @@ import com.shop.purchase.entity.Product;
 public interface ProductService {
 	
 
-    public List<Product> findAll();
+    public Optional<List<Product>> findAll();
 
     public Optional<Product> findById(int id);
 
