@@ -5,13 +5,8 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import com.shop.purchase.entity.Order;
 import com.shop.purchase.entity.Product;
 import com.shop.purchase.entity.ProductOrder;
@@ -38,9 +33,6 @@ class PurchaseApplicationTests {
 	@Test
 	public void testSave() {
 		
-		//List product
-		
-		ArrayList<ProductOrder> listProductOrder = new ArrayList<>();
 		
 		//Product 1
 		Product  product = new Product();
@@ -60,7 +52,7 @@ class PurchaseApplicationTests {
 		product2.setCurrentStock(4);
 		productRepository.save(product2);
 
-		
+		//Order
 		Order order = new Order();
 		order.setIdOrder(1);
 		order.setProduct(product2);
@@ -68,19 +60,12 @@ class PurchaseApplicationTests {
 		
 		
 		ProductOrderPK productOrderPK = new ProductOrderPK();
-		//productOrderPK.setOrder(order);
-	//	productOrderPK.setProduct(product2);
-		
 		ProductOrder productOrder = new ProductOrder();
 		productOrder.setId(productOrderPK);
 		
-
 		productOrderRepository.save(productOrder);
 		
-		
-		
-		
-		System.out.println(productOrderRepository.findAll());
+	
 	}
 
 }

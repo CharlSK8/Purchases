@@ -9,6 +9,8 @@ import com.shop.purchase.entity.Order;
 
 @Service
 public interface OrderService {
+	
+	public int findLastIdValue();
 
     public List<Order> findAll();
 

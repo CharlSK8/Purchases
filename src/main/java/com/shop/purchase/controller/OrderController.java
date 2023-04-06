@@ -5,10 +5,10 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -19,6 +19,7 @@ import com.shop.purchase.service.order.OrderServiceImplements;
 
 @RestController
 @RequestMapping("/orders")
+@CrossOrigin(origins = "*")
 public class OrderController {
 	
 	@Autowired
@@ -41,6 +42,12 @@ public class OrderController {
 	@ResponseStatus(HttpStatus.OK)
 	public void save(@RequestBody Order order) {
 		orderService.save(order);
+	}
+	
+	@GetMapping("/lastOrder")
+	@ResponseStatus(HttpStatus.OK)
+	public int getLastOrder() {
+		return orderService.findLastIdValue();
 	}
 	
 

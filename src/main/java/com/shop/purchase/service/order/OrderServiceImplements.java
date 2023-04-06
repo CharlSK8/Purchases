@@ -37,5 +37,10 @@ public class OrderServiceImplements implements OrderService{
 		return false;
 	}
 
+	@Override
+	public int findLastIdValue() {
+		return orderRepository.findLastIdValue();
+	}
+
 	
 }

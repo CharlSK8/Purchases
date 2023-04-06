@@ -1,6 +1,5 @@
 package com.shop.purchase.entity;
 
-import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -18,16 +17,6 @@ public class Product {
 	@Column(name="current_Stock")
 	private int currentStock;
 	
-	
-	/*
-	@OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<ProductOrder> productOrder;
-	
-	
-	@ManyToOne
-	@JoinColumn(name="product_id")
-	Order order;
-	*/
 	public Product() {
 		super();
 	}

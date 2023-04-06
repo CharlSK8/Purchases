@@ -35,8 +35,6 @@ public class ProductOrderImplements implements ProductOrderService{
 	public void save(int productId, int orderId) {
 		
 		Optional<Order> order = orderRepository.findById(orderId);
-		
-		
 		Optional<Product> product = productRepository.findById(productId);
 		
 		ProductOrderPK productOrderPK = new ProductOrderPK();

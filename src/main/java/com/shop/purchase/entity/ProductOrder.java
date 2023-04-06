@@ -9,18 +9,6 @@ public class ProductOrder {
 	@EmbeddedId
     private ProductOrderPK id;
 	
-	/*
-	@ManyToOne
-	@MapsId("idProduct")
-	@JoinColumn(name= "product_id", insertable = false, updatable = false)
-	private Product product;
-	
-	@ManyToOne
-	@JoinColumn(name= "order_id", insertable = false, updatable = false)
-	private Order order;
-	*/
-	
-
 	public ProductOrder() {
 		super();
 	}

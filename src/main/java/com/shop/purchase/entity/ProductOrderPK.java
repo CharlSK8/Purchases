@@ -1,15 +1,11 @@
 package com.shop.purchase.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 
 import java.io.Serializable;
-import java.util.Objects;
-import java.util.Optional;
 
 @Embeddable
 public class ProductOrderPK implements Serializable {
